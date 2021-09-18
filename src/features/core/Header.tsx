@@ -7,6 +7,7 @@ import { theme } from "../../styles/theme";
 
 const Header = () => {
   return (
+<<<<<<< HEAD
     <div>
       <ThemeProvider theme={theme}>
         <AppBar color="primary" position="relative">
@@ -18,6 +19,17 @@ const Header = () => {
         </AppBar>
       </ThemeProvider>
     </div>
+=======
+    <>
+      <AppBar color="primary" position="relative">
+        <Toolbar>
+          <Typography variant="h4" color="inherit">
+            PortFolder
+          </Typography>
+        </Toolbar>
+      </AppBar>
+    </>
+>>>>>>> a8c97de (feat: ポートフォリオ一覧ページの作成)
   );
 };
 
