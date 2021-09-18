@@ -1,7 +1,10 @@
 import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit";
+import portfolioCardReducer from "../features/portfolio/portfolioCardSlice";
 
 export const store = configureStore({
-  reducer: {},
+  reducer: {
+    portfolioCard: portfolioCardReducer,
+  },
 });
 
 export type AppDispatch = typeof store.dispatch;
