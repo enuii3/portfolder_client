@@ -2,7 +2,8 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { RootState } from "../../app/store";
 import axios from "axios";
 
-export const apiUrlPortfolios = `${process.env.REACT_APP_DEV_API_URL}api/portfolios/`;
+export const apiUrlPortfolios = `${process.env.REACT_APP_API_URL}/api/portfolios/`;
+
 const initialState = {
   portfolios: [
     {
