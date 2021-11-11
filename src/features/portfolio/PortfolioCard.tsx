@@ -66,7 +66,7 @@ const PortfolioCard: React.FC<PROPS_PORTFOLIO> = ({
             {title}
           </Typography>
           <Typography data-testid="portfolio_description">
-            {shortcutedDescription ? shortcutedDescription : ""}
+            {shortcutedDescription ? shortcutedDescription : description}
           </Typography>
         </CardContent>
         <CardActions>

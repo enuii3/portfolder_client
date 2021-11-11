@@ -54,7 +54,7 @@ describe("PortfolioCard Component Test Cases", () => {
     expect(screen.getByText("View")).toBeInTheDocument();
     expect(screen.getByText("Github")).toBeInTheDocument();
   });
-  it("2: Should render parameter of portfolio from Main Component", async () => {
+  it("2: Should render parameter of portfolio from Main Component with shortcuted_description", async () => {
     render(
       <PortfolioCard
         title={portfolio.title}
@@ -64,10 +64,37 @@ describe("PortfolioCard Component Test Cases", () => {
         user={portfolio.user}
       />
     );
-    let short_description: string =
+    let shortcuted_description: string =
       "Toward brother success suffer stock serve method. Nation lawyer similar room raise. College kitchen TV human raise practice listen consider. Mission age local reach.Page street then continue goal huge...";
+    let regep_shortcuted_description = new RegExp(shortcuted_description);
+
+    expect(screen.getByText("test-title1")).toBeInTheDocument();
+    expect(screen.getByText("test-user1")).toBeInTheDocument();
+    expect(screen.getByText("View")).toBeInTheDocument();
+    expect(screen.getByText("Github")).toBeInTheDocument();
+    expect(screen.getByTestId("portfolio_title")).toHaveTextContent(
+      /^test-title1$/
+    );
+    expect(screen.getByTestId("portfolio_description")).toHaveTextContent(
+      regep_shortcuted_description
+    );
+    expect(screen.getByTestId("portfolio_user")).toHaveTextContent(
+      /^test-user1$/
+    );
+  });
+  it("3: Should render parameter of portfolio from Main Component with short_description", async () => {
+    let short_description: string = "A string of 100 characters";
     let regep_short_description = new RegExp(short_description);
 
+    render(
+      <PortfolioCard
+        title={portfolio.title}
+        description={short_description}
+        image={portfolio.image}
+        github={portfolio.github}
+        user={portfolio.user}
+      />
+    );
     expect(screen.getByText("test-title1")).toBeInTheDocument();
     expect(screen.getByText("test-user1")).toBeInTheDocument();
     expect(screen.getByText("View")).toBeInTheDocument();
