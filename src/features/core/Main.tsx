@@ -10,7 +10,6 @@ import Header from "./Header";
 import PortfolioCard from "../portfolio/PortfolioCard";
 import { selectPortfolios } from "../portfolio/portfolioCardSlice";
 import { fetchAsyncGetPortfolios } from "../portfolio/portfolioCardSlice";
-import { apiUrlPortfolios } from "../portfolio/portfolioCardSlice";
 
 const useStyles = makeStyles((theme) => ({
   cardGrid: {
